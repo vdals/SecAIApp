@@ -1,63 +1,25 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
+# Virtual Environment specific to backend
+backend/venv/
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+backend/.env
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
+backend/logs/
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+backend/uploads/
 
-# IDE files
-.idea/
+backend/app.db
+
 .vscode/
+.idea/
 *.swp
 *.swo
 
-# Log files
-logs/
-*.log
+.DS_Store
 
-# Database
-*.db
-*.sqlite3
-
-# Media files
-media/
-uploads/ 
+build/
+dist/
+*.egg-info/

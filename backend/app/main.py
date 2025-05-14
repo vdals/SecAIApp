@@ -18,20 +18,6 @@ from app.videos.router import router as videos_router
 from app.events.router import router as events_router
 from app.config import settings
 
-if settings.DEBUG:
-    try:
-        alembic_cfg = Config("alembic.ini")
-        command.upgrade(alembic_cfg, "head")
-        logger.info("Database migrations applied successfully")
-    except Exception as e:
-        logger.error(f"Failed to apply database migrations: {str(e)}")
-
-if settings.SECRET_KEY == "SECRET_KEY" or not settings.SECRET_KEY:
-    logger.warning("Using insecure SECRET_KEY! Please set a secure key in environment variables.")
-    if settings.DEBUG:
-        import secrets
-        settings.SECRET_KEY = secrets.token_hex(32)
-
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
