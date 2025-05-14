@@ -1,4 +1,5 @@
 import logging
+import uvicorn
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -149,5 +150,4 @@ logger.info(f"Starting {settings.PROJECT_NAME} v{settings.VERSION}")
 logger.info(f"Debug mode: {settings.DEBUG}")
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True) 

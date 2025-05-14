@@ -1,103 +1,49 @@
-# AI-Enhanced Video Surveillance System
+# SecAppAI: AI-Enhanced Video Surveillance System (Monorepo)
 
-A full-featured FastAPI application for video surveillance systems with external AI integration.
+This monorepo contains the complete codebase for the SecAppAI project, an AI-enhanced video surveillance system.
 
-## Features
+## Components
 
-- User management with roles and permissions
-- Location (buildings) management
-- Surveillance camera management
-- Video storage and management
-- Incident detection using AI
-- JWT authentication
+This project is organized into the following main components:
 
-## Technologies
+*   `backend/`: The core FastAPI backend service.
+    *   Handles API requests, user management, database interactions, and business logic.
+    *   (See `backend/README.md` for detailed setup and usage instructions)
+*   `frontend/`: Frontend web application for user interaction.
+*   `ai_service/`: Dedicated service for AI model inference and video processing.
+*   `docs/`: Project documentation, including API specifications, architecture diagrams, and setup guides.
+*   `scripts/`: Utility scripts for development, testing, and deployment across the monorepo.
 
-- Python 3.10+
-- FastAPI
-- SQLAlchemy 2.0+
-- Pydantic 2.0+
-- Alembic for migrations
-- JWT for authentication
+## Core Technologies (Overall Project)
 
-## Installation
+*   Python (for backend)
+*   FastAPI (for backend API)
+*   PostgreSQL (Database)
+*   Alembic (Database migrations)
+*   Pydantic (Data validation)
+*   JWT (Authentication)
 
-1. Clone the repository
+## Getting Started
 
-2. Create a virtual environment and install dependencies:
-```
-python -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
+1.  **Clone the monorepo:**
+    ```bash
+    git clone https://github.com/vdals/SecAIApp.git
+    cd SecAppAI
+    ```
 
-3. Configure environment variables (or use a `.env` file)
+2.  **Setup Individual Components:**
+    Each component (`backend`, `frontend`, `ai_service`) has its own setup instructions, dependencies, and virtual environment. Please refer to the `README.md` file within each component's directory for detailed setup.
 
-4. Run migrations:
-```
-alembic upgrade head
-```
+    *   To set up the backend, navigate to the `backend/` directory and follow the instructions in `backend/README.md`.
 
-5. Start the server:
-```
-uvicorn app.main:app --reload
-```
-
-6. Open Swagger UI:
-```
-http://localhost:8000/docs
-```
-
-## Project Structure
+## Project Structure Overview
 
 ```
-app/                   # Main application package
-├── db/                # Database configuration and utils
-│   ├── session.py     # Database connection setup
-│   ├── base.py        # Base models and database utilities
-│   └── init_models.py # Model initialization
-├── common/            # Shared utilities and components
-│   ├── repository.py  # Base repository pattern implementation
-│   ├── schemas.py     # Common Pydantic schemas
-│   ├── dependencies.py # FastAPI dependencies
-│   └── utils.py       # General utility functions
-├── auth/              # Authentication & authorization module
-│   ├── dependencies.py # Auth dependencies
-│   ├── models.py      # Auth database models (roles, permissions)
-│   ├── router.py      # Auth endpoints
-│   ├── schemas.py     # Auth Pydantic schemas
-│   ├── service.py     # Auth business logic
-│   └── repository.py  # Auth data access layer
-├── users/             # User management module
-│   ├── models.py      # User database models
-│   ├── router.py      # User endpoints
-│   ├── schemas.py     # User Pydantic schemas
-│   ├── service.py     # User business logic
-│   └── repository.py  # User data access layer
-├── locations/         # Locations/buildings management
-│   ├── models.py      # Location database models
-│   ├── router.py      # Location endpoints
-│   ├── schemas.py     # Location Pydantic schemas
-│   ├── service.py     # Location business logic
-│   └── repository.py  # Location data access layer
-├── cameras/           # Camera management module
-│   ├── models.py      # Camera database models
-│   ├── router.py      # Camera endpoints
-│   ├── schemas.py     # Camera Pydantic schemas
-│   ├── service.py     # Camera business logic
-│   └── repository.py  # Camera data access layer
-├── videos/            # Video management module
-│   ├── models.py      # Video database models
-│   ├── router.py      # Video endpoints
-│   ├── schemas.py     # Video Pydantic schemas
-│   ├── service.py     # Video business logic
-│   └── repository.py  # Video data access layer
-├── events/            # Event detection and management
-│   ├── models.py      # Event database models
-│   ├── router.py      # Event endpoints
-│   ├── schemas.py     # Event Pydantic schemas
-│   ├── service.py     # Event business logic
-│   └── repository.py  # Event data access layer
-├── config.py          # Application configuration
-└── main.py            # Application entry point
-``` 
+SecAppAI/
+├── backend/
+├── frontend/
+├── ai_service/
+├── docs/
+├── scripts/
+├── .gitignore
+├── README.md
